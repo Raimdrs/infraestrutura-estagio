@@ -20,21 +20,6 @@ O objetivo é demonstrar conhecimentos básicos de administração de banco de d
 * Verificação do status do Tomcat e jboss.
 * Exibição do status da instância.
 
----
-
-infraestrutura-estagio/
-│
-├── banco/
-│   ├── dump.ps1
-│   └── restore.ps1
-│
-├── servicos/
-│   └── jboss.ps1
-│
-└── README.md
-
----
-
 # Requisitos
 
 * Windows 10 ou superior
@@ -131,7 +116,7 @@ set PGPASSWORD=
 
 Execução:
 
-Basta dar executar o arquivo Dump.bat
+Basta dar executar o arquivo Restore.bat
 
 ---
 
@@ -209,7 +194,7 @@ Write-Host "===== VERIFICANDO SERVIÇO JBOSS ====="
 # Arquivo temporário específico para o JBoss
 $LockFile = "$env:TEMP\jboss_parado.lock"
 
-# Busca o serviço. Atenção: no Windows, o JBoss às vezes é instalado com o nome "WildFly*"
+# Busca o serviço.
 $jboss = Get-Service -Name JBoss* -ErrorAction SilentlyContinue
 
 if ($jboss) {
